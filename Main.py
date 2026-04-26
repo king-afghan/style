@@ -31,7 +31,12 @@ def clear():
 
 def banner():
     os.system("echo \"{}\" | lolcat -p 1.6".format(logo))
-
+def show_ansi():
+    try:
+        with open("assets/ansi-art.utf.ans.txt", "r", encoding="utf-8", errors="ignore") as f:
+            print(f.read())
+    except:
+        print("ANSI file not found!")
 def welcome():
     print("\033[1;32mWelcome to FAROOQ Tool...\033[0m")
     time.sleep(1)
@@ -41,6 +46,7 @@ def main():
     welcome()
     time.sleep(0.5)
     clear()
+    show_ansi() 
     banner()
 
 if __name__ == "__main__":
