@@ -22,12 +22,12 @@ BOX2_BG = "\033[48;2;0;100;80m"         # Teal
 # د 2، 4، 6 کرښو لپاره ځانګړي شالید رنګونه (لومړی بکس)
 SPECIAL_BG1_2 = "\033[48;2;205;133;63m"   # Peru (د 2 کرښې لپاره)
 SPECIAL_BG1_4 = "\033[48;2;210;105;30m"  # Chocolate (د 4 کرښې لپاره)
-SPECIAL_BG1_6 = "\033[48;2;188;143;143m" # RosyBrown (د 6 کرښې لپاره)
+SPECIAL_BG1_6 = "\033[48;2;222;184;135m" # BurlyWood (خرمایی - د 6 کرښې لپاره)
 
 # د 2، 4، 6 کرښو لپاره ځانګړي شالید رنګونه (دویم بکس)
 SPECIAL_BG2_2 = "\033[48;2;32;178;170m"  # LightSeaGreen (د 2 کرښې لپاره)
 SPECIAL_BG2_4 = "\033[48;2;0;139;139m"   # DarkCyan (د 4 کرښې لپاره)
-SPECIAL_BG2_6 = "\033[48;2;72;209;204m"  # MediumTurquoise (د 6 کرښې لپاره)
+SPECIAL_BG2_6 = "\033[48;2;244;196;48m"  # Saffron (زعفرانی - د 6 کرښې لپاره) 🔄 بدل شو
 
 # د متن هایلایټ رنګونه
 BOX2_TEXT_HIGHLIGHT = "\033[38;2;255;215;0m"  # د متن لپاره طلایی
@@ -146,7 +146,7 @@ def print_box2():
         f"  {WHITE_TEXT}⚡ Use Airplane (Flight) Mode For Speed Up",                         # کرښه 3
         f"  {WHITE_TEXT}[!] {BOX2_TEXT_HIGHLIGHT}Turn on Flight Mode{WHITE_TEXT}",          # کرښه 4 - خاص شالید
         f"  {WHITE_TEXT}Speed           >> {BOX2_TEXT_HIGHLIGHT}MAXIMUM{WHITE_TEXT}",       # کرښه 5
-        f"  {WHITE_TEXT}Connection      >> {BOX2_TEXT_HIGHLIGHT}STABLE{WHITE_TEXT}"         # کرښه 6 - خاص شالید
+        f"  {WHITE_TEXT}Connection      >> {BOX2_TEXT_HIGHLIGHT}STABLE{WHITE_TEXT}"         # کرښه 6 - خاص شالید (اوس زعفرانی)
     ]
     
     for i, info in enumerate(info_lines):
