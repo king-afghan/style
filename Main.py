@@ -299,14 +299,11 @@ class RANDOM:
         self.session = requests.Session()
         self.main()
 
+    def clear(self):
+        os.system("clear")
+        os.system(f'echo "{logo}" | lolcat -p 1.6')
 
-     def clear(self):
-    os.system("clear")
-    os.system(f'echo "{logo}" | lolcat -p 1.6')
-
-def linex(self):
-
- 
+    def linex(self):
         print(f"{W}------------------------------------------------")
 
     def main(self):
