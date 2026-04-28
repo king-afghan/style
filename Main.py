@@ -25,7 +25,7 @@ SPECIAL_BG1_4 = "\033[48;2;210;105;30m"  # Chocolate (د 4 کرښې لپاره)
 SPECIAL_BG1_6 = "\033[48;2;155;0;81m"    # #9b0051 (د 6 کرښې لپاره)
 
 # د 2، 4، 6 کرښو لپاره ځانګړي شالید رنګونه (دویم بکس)
-SPECIAL_BG2_2 = "\033[48;2;32;178;170m"  # LightSeaGreen (د 2 کرښې لپاره)
+SPECIAL_BG2_2 = "\033[48;2;84;0;0m"  # LightSeaGreen (د 2 کرښې لپاره)
 SPECIAL_BG2_4 = "\033[48;2;0;139;139m"   # DarkCyan (د 4 کرښې لپاره)
 SPECIAL_BG2_6 = "\033[48;2;84;0;0m"      # #540000 (د 6 کرښې لپاره)
 
@@ -96,7 +96,7 @@ def print_box1():
     line_width = min(width - 4, 70)
     
     # پورتنۍ کرښه - هنري
-    print(f"{LINE_BOLD}{DARK_GOLD}═══════════════════════ {GOLD_LINE}» ───── «◊•» ✠ • ◊ «─────» «══════════════════{RESET}")
+    print(f"{LINE_BOLD}{DARK_GOLD}═══════════════════════ {GOLD_LINE}» ───── «◊•» ✠ • ◊ «─────» «═════════════════{RESET}")
     
     # د معلوماتو کرښې
     info_lines = [
@@ -127,7 +127,7 @@ def print_box1():
         print(f"{bg_color}{WHITE_TEXT}{BOLD}║{info}{' ' * padding_needed} ║{RESET}")
     
     # ښکته کرښه - هنري
-    print(f"{LINE_BOLD}{DARK_GOLD}════════════════════ ──•◆•── ────────────────•✦•───────────────────╝{RESET}")
+    print(f"{LINE_BOLD}{DARK_GOLD}═════════════════════ ──•◆•── ────────────────•✦•───────────────────╝{RESET}")
 
 def print_box2():
     """دویم بکس - 2، 4، 6 کرښو ته ځانګړی شالید"""
@@ -135,13 +135,13 @@ def print_box2():
     line_width = min(width - 4, 70)
     
     # پورتنۍ کرښه - هنري
-    print(f"{LINE_BOLD}{LIGHT_GOLD}═══════════════════════ {RED_GOLD}» ───── «◊•» ✠ • ◊ «─────» «══════════════════{RESET}")
+    print(f"{LINE_BOLD}{LIGHT_GOLD}═══════════════════════ {RED_GOLD}» ───── «◊•» ✠ • ◊ «─────» «═════════════════{RESET}")
     
     # د معلوماتو کرښې
     info_lines = [
         f"  {WHITE_TEXT}Operator        >> {BOX2_TEXT_HIGHLIGHT}0171{WHITE_TEXT}",           # کرښه 1
         f"  {WHITE_TEXT}Total Account   >> {BOX2_TEXT_HIGHLIGHT}5000{WHITE_TEXT}",           # کرښه 2 - خاص شالید
-        f"  {WHITE_TEXT}⚡ Use Airplane (Flight) Mode For Speed Up",                         # کرښه 3
+        f"  {WHITE_TEXT}Use Airplane (Flight) Mode For Speed Up",                         # کرښه 3
         f"  {WHITE_TEXT}[!] {BOX2_TEXT_HIGHLIGHT}Turn on Flight Mode{WHITE_TEXT}",          # کرښه 4 - خاص شالید
         f"  {WHITE_TEXT}Speed           >> {BOX2_TEXT_HIGHLIGHT}MAXIMUM{WHITE_TEXT}",       # کرښه 5
         f"  {WHITE_TEXT}Connection      >> {BOX2_TEXT_HIGHLIGHT}STABLE{WHITE_TEXT}"         # کرښه 6 - خاص شالید
@@ -166,7 +166,7 @@ def print_box2():
         print(f"{bg_color}{BOX2_TEXT_HIGHLIGHT}{BOLD}║{info}{' ' * padding_needed} ║{RESET}")
     
     # ښکته کرښه - هنري
-    print(f"{LINE_BOLD}{LIGHT_GOLD}════════════════════ ──•◆•── ────────────────•✦•───────────────────╝{RESET}")
+    print(f"{LINE_BOLD}{LIGHT_GOLD}══════════════════════ ──•◆•── ────────────────•✦•───────────────────╝{RESET}")
 
 def show_prompt():
     """ترمینل پرامپټ - درې اسماني ❯❯❯ نښې"""
@@ -177,7 +177,7 @@ def show_prompt():
 def welcome():
     """د ویلکم مسیج - لوی سایز"""
     width = get_terminal_width()
-    welcome_text = "⚡ WELCOME TO FAROOQ TOOL ⚡"
+    welcome_text = "WELCOME TO FAROOQ TOOL"
     
     padding = (width - len(welcome_text)) // 2
     if padding < 0:
