@@ -19,33 +19,15 @@ RED_GOLD = "\033[38;2;255;69;0m"        # سور-طلایی
 BOX1_BG = "\033[48;2;139;69;19m"        # SaddleBrown
 BOX2_BG = "\033[48;2;0;100;80m"         # Teal
 
-# د لومړي بکس لپاره ځانګړي رنګونه
-SPECIAL_BG1_2 = "\033[48;2;255;102;106m"   # #ff666a (دویمه کرښه)
-SPECIAL_BG1_6 = "\033[48;2;84;0;0m"        # #540000 (اخري کرښه)
+# د 2، 4، 6 کرښو لپاره ځانګړي شالید رنګونه (لومړی بکس)
+SPECIAL_BG1_2 = "\033[48;2;205;133;63m"   # Peru (د 2 کرښې لپاره)
+SPECIAL_BG1_4 = "\033[48;2;210;105;30m"  # Chocolate (د 4 کرښې لپاره)
+SPECIAL_BG1_6 = "\033[48;2;155;0;81m"    # #9b0051 (د 6 کرښې لپاره)
 
-# د دویم بکس لپاره ځانګړي رنګونه
-SPECIAL_BG2_2 = "\033[48;2;255;177;153m"   # #ffb199 (دویمه کرښه)
-SPECIAL_BG2_6 = "\033[48;2;84;0;0m"        # #540000 (اخري کرښه)
-
-# د لومړي بکس لپاره نور رنګونه (د 1، 3، 5 کرښو لپاره)
-BOX1_COLORS = [
-    "\033[48;2;155;0;81m",    # #9b0051 (لومړۍ کرښه)
-    SPECIAL_BG1_2,             # #ff666a (دویمه کرښه)
-    "\033[48;2;255;177;153m",  # #ffb199 (دریمه کرښه)
-    "\033[48;2;84;255;153m",   # #54ff99 (څلورمه کرښه)
-    BOX1_BG,                   # SaddleBrown (پنځمه کرښه)
-    SPECIAL_BG1_6              # #540000 (شپږمه کرښه)
-]
-
-# د دویم بکس لپاره نور رنګونه (د 1، 3، 5 کرښو لپاره)
-BOX2_COLORS = [
-    "\033[48;2;155;0;81m",     # #9b0051 (لومړۍ کرښه)
-    SPECIAL_BG2_2,              # #ffb199 (دویمه کرښه)
-    "\033[48;2;255;102;106m",  # #ff666a (دریمه کرښه)
-    "\033[48;2;84;255;153m",   # #54ff99 (څلورمه کرښه)
-    BOX2_BG,                   # Teal (پنځمه کرښه)
-    SPECIAL_BG2_6              # #540000 (شپږمه کرښه)
-]
+# د 2، 4، 6 کرښو لپاره ځانګړي شالید رنګونه (دویم بکس)
+SPECIAL_BG2_2 = "\033[48;2;32;178;170m"  # LightSeaGreen (د 2 کرښې لپاره)
+SPECIAL_BG2_4 = "\033[48;2;0;139;139m"   # DarkCyan (د 4 کرښې لپاره)
+SPECIAL_BG2_6 = "\033[48;2;84;0;0m"      # #540000 (د 6 کرښې لپاره)
 
 # د متن هایلایټ رنګونه
 BOX2_TEXT_HIGHLIGHT = "\033[38;2;255;215;0m"  # د متن لپاره طلایی
@@ -53,10 +35,8 @@ BOX2_TEXT_HIGHLIGHT = "\033[38;2;255;215;0m"  # د متن لپاره طلایی
 # د کرښو لپاره ځانګړي رنگین کوډونه
 LINE_BOLD = "\033[1m"
 
-# د پرامپټ درې مختلف رنګونه - د ❯ نښو لپاره
-RED_ARROW = "\033[91m"      # سور رنګ
-GREEN_ARROW = "\033[92m"    # شین رنګ
-BLUE_ARROW = "\033[94m"     # نیلي رنګ
+# د پرامپټ درې نښو لپاره - ټول اسماني رنګ (Cyan)
+CYAN_ARROW = "\033[96m"     # اسماني رنګ
 
 logo = '''
 
@@ -111,26 +91,33 @@ def banner():
     os.system(f"echo \"{logo}\" | lolcat -p 1.6")
 
 def print_box1():
-    """لومړی بکس - هر کرښه ځانګړی رنګ"""
+    """لومړی بکس - 2، 4، 6 کرښو ته ځانګړی شالید"""
     width = get_terminal_width()
     line_width = min(width - 4, 70)
     
     # پورتنۍ کرښه - هنري
-    print(f"{LINE_BOLD}{DARK_GOLD}═══════════════════════ {GOLD_LINE}» ───── «◊•» ✠ • ◊ «─────» «═══════════════════{RESET}")
+    print(f"{LINE_BOLD}{DARK_GOLD}═══════════════════════ {GOLD_LINE}» ───── «◊•» ✠ • ◊ «─────» «══════════════════{RESET}")
     
     # د معلوماتو کرښې
     info_lines = [
-        f"  {GOLD_LINE}Developer   >>{WHITE_TEXT} Faroooq Inc",           # کرښه 1
-        f"  {GOLD_LINE}Tool Type   >>{WHITE_TEXT} FILExRANDOM",           # کرښه 2
-        f"  {GOLD_LINE}Github      >>{WHITE_TEXT} github.com/porn-404",   # کرښه 3
-        f"  {GOLD_LINE}Version     >>{WHITE_TEXT} V2.7",                  # کرښه 4
-        f"  {GOLD_LINE}Status      >>{WHITE_TEXT} Active",                # کرښه 5
-        f"  {GOLD_LINE}Platform    >>{WHITE_TEXT} Termux"                 # کرښه 6
+        f"  {GOLD_LINE}Developer   >>{WHITE_TEXT} Faroooq Inc",        # کرښه 1
+        f"  {GOLD_LINE}Tool Type   >>{WHITE_TEXT} FILExRANDOM",        # کرښه 2 - خاص شالید
+        f"  {GOLD_LINE}Github      >>{WHITE_TEXT} github.com/porn-404", # کرښه 3
+        f"  {GOLD_LINE}Version     >>{WHITE_TEXT} V2.7",               # کرښه 4 - خاص شالید
+        f"  {GOLD_LINE}Status      >>{WHITE_TEXT} Active",             # کرښه 5
+        f"  {GOLD_LINE}Platform    >>{WHITE_TEXT} Termux"              # کرښه 6 - خاص شالید
     ]
     
     for i, info in enumerate(info_lines):
-        # د کرښې نمبر مطابق شالید ټاکل
-        bg_color = BOX1_COLORS[i] if i < len(BOX1_COLORS) else BOX1_BG
+        # د کرښې نمبر مطابق شالید ټاکل (0-based index)
+        if i == 1:  # 2 کرښه
+            bg_color = SPECIAL_BG1_2
+        elif i == 3:  # 4 کرښه
+            bg_color = SPECIAL_BG1_4
+        elif i == 5:  # 6 کرښه
+            bg_color = SPECIAL_BG1_6
+        else:
+            bg_color = BOX1_BG
         
         clean_info = info.replace(GOLD_LINE, '').replace(WHITE_TEXT, '').replace(RESET, '')
         info_len = len(clean_info)
@@ -140,29 +127,36 @@ def print_box1():
         print(f"{bg_color}{WHITE_TEXT}{BOLD}║{info}{' ' * padding_needed} ║{RESET}")
     
     # ښکته کرښه - هنري
-    print(f"{LINE_BOLD}{DARK_GOLD}═══════════════ ──•◆•── ────────────────•✦•───────────────────╝{RESET}")
+    print(f"{LINE_BOLD}{DARK_GOLD}════════════════════ ──•◆•── ────────────────•✦•───────────────────╝{RESET}")
 
 def print_box2():
-    """دویم بکس - هر کرښه ځانګړی رنګ"""
+    """دویم بکس - 2، 4، 6 کرښو ته ځانګړی شالید"""
     width = get_terminal_width()
     line_width = min(width - 4, 70)
     
     # پورتنۍ کرښه - هنري
-    print(f"{LINE_BOLD}{LIGHT_GOLD}═══════════════════════ {RED_GOLD}» ───── «◊•» ✠ • ◊ «─────» «═══════════════════{RESET}")
+    print(f"{LINE_BOLD}{LIGHT_GOLD}═══════════════════════ {RED_GOLD}» ───── «◊•» ✠ • ◊ «─────» «══════════════════{RESET}")
     
     # د معلوماتو کرښې
     info_lines = [
         f"  {WHITE_TEXT}Operator        >> {BOX2_TEXT_HIGHLIGHT}0171{WHITE_TEXT}",           # کرښه 1
-        f"  {WHITE_TEXT}Total Account   >> {BOX2_TEXT_HIGHLIGHT}5000{WHITE_TEXT}",           # کرښه 2
+        f"  {WHITE_TEXT}Total Account   >> {BOX2_TEXT_HIGHLIGHT}5000{WHITE_TEXT}",           # کرښه 2 - خاص شالید
         f"  {WHITE_TEXT}⚡ Use Airplane (Flight) Mode For Speed Up",                         # کرښه 3
-        f"  {WHITE_TEXT}[!] {BOX2_TEXT_HIGHLIGHT}Turn on Flight Mode{WHITE_TEXT}",          # کرښه 4
+        f"  {WHITE_TEXT}[!] {BOX2_TEXT_HIGHLIGHT}Turn on Flight Mode{WHITE_TEXT}",          # کرښه 4 - خاص شالید
         f"  {WHITE_TEXT}Speed           >> {BOX2_TEXT_HIGHLIGHT}MAXIMUM{WHITE_TEXT}",       # کرښه 5
-        f"  {WHITE_TEXT}Connection      >> {BOX2_TEXT_HIGHLIGHT}STABLE{WHITE_TEXT}"         # کرښه 6
+        f"  {WHITE_TEXT}Connection      >> {BOX2_TEXT_HIGHLIGHT}STABLE{WHITE_TEXT}"         # کرښه 6 - خاص شالید
     ]
     
     for i, info in enumerate(info_lines):
-        # د کرښې نمبر مطابق شالید ټاکل
-        bg_color = BOX2_COLORS[i] if i < len(BOX2_COLORS) else BOX2_BG
+        # د کرښې نمبر مطابق شالید ټاکل (0-based index)
+        if i == 1:  # 2 کرښه
+            bg_color = SPECIAL_BG2_2
+        elif i == 3:  # 4 کرښه
+            bg_color = SPECIAL_BG2_4
+        elif i == 5:  # 6 کرښه
+            bg_color = SPECIAL_BG2_6
+        else:
+            bg_color = BOX2_BG
         
         clean_info = info.replace(BOX2_TEXT_HIGHLIGHT, '').replace(WHITE_TEXT, '').replace(RESET, '')
         info_len = len(clean_info)
@@ -172,12 +166,13 @@ def print_box2():
         print(f"{bg_color}{BOX2_TEXT_HIGHLIGHT}{BOLD}║{info}{' ' * padding_needed} ║{RESET}")
     
     # ښکته کرښه - هنري
-    print(f"{LINE_BOLD}{LIGHT_GOLD}═══════════════ ──•◆•── ────────────────•✦•───────────────────╝{RESET}")
+    print(f"{LINE_BOLD}{LIGHT_GOLD}════════════════════ ──•◆•── ────────────────•✦•───────────────────╝{RESET}")
 
 def show_prompt():
-    """ترمینل پرامپټ - درې مختلف رنګونه لرونکې ❯❯❯ نښې"""
+    """ترمینل پرامپټ - درې اسماني ❯❯❯ نښې"""
     print(f"\n\033[93m{BOLD}┌─[h4ck3r@termux]-[~]\033[0m")
-    print(f"{BOLD}{RED_ARROW}└──╼{RESET} {BOLD}{RED_ARROW}❯{RESET}{BOLD}{GREEN_ARROW}❯{RESET}{BOLD}{BLUE_ARROW}❯{RESET} \033[0m", end="")
+    # درې نښې ټولې اسماني رنګ
+    print(f"{BOLD}{CYAN_ARROW}└──╼{RESET} {BOLD}{CYAN_ARROW}❯{RESET}{BOLD}{CYAN_ARROW}❯{RESET}{BOLD}{CYAN_ARROW}❯{RESET} \033[0m", end="")
 
 def welcome():
     """د ویلکم مسیج - لوی سایز"""
@@ -219,4 +214,4 @@ def main():
     print()
 
 if __name__ == "__main__":
-    main() 
+    main()
