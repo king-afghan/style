@@ -389,17 +389,17 @@ class RANDOM:
         self.main()
 
     def clear(self):
-        os.system("clear")
-        os.system(f'echo "{logo}" | lolcat -p 1.6')
-        print()
-        print_centered_big("WELCOME TO FAROOOQ TOOLS")
-        print()
-        print_box1()
-        print()
-        show_prompt()
-        print()
+    os.system("clear")
+    os.system(f'echo "{logo}" | lolcat -p 1.6')
+    print()
+    print_centered_big("WELCOME TO FAROOOQ TOOLS")
+    print()
+    print_box1()
+    print()
+    show_prompt()
+    print()
 
-    def linex(self):
+def linex(self):
     width = get_terminal_width()
     line_width = min(width - 4, 50)
     print(f"{GOLD_LINE}{BOLD}{'░' * line_width}{RESET}")
@@ -417,16 +417,16 @@ def main(self):
     print(f"{GOLD_LINE}{BOLD}{'◇' * box_width}{RESET}")
     self.linex()
     x = input(f" {X} Choice > ")
-        if x == "1":
-            self.file()
-        elif x == "2":
-            self.rnd()
-        elif x == "3":
-            os.system("termux-open https://www.facebook.com/txt.cyber.143")
-        elif x == "0":
-            sys.exit()
-        else:
-            self.main()
+    if x == "1":
+        self.file()
+    elif x == "2":
+        self.rnd()
+    elif x == "3":
+        os.system("termux-open https://www.facebook.com/txt.cyber.143")
+    elif x == "0":
+        sys.exit()
+    else:
+        self.main()
 
     def file(self):
         self.clear()
