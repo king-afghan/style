@@ -33,12 +33,7 @@ logo = """
  ██╔══╝░ ██╔══██║██╔══██╗██║░░░██║██║░░░██║ ██║▄▄░██║░╚═════╝░██║██║╚████║██║░░██╗░░░░  
  ██║░░░░ ██║░░██║██║░░██║╚██████╔╝╚██████╔╝░╚██████╔╝░░░░░░░░░██║██║░╚███║╚█████╔╝░░░░  
  ╚═╝░░░░ ╚═╝░░╚═╝╚═╝░░╚═╝░╚═════╝░░╚═════╝░░░╚══▀▀═╝░░░░░░░░░░╚═╝╚═╝░░╚══╝░╚════╝░░░░░  V2.7
-
-    
- -------------------------------------------------                                            
- [/] Developer > M-KING
- [/] Tool Type > File & Random 
-------------------------------------------------"""
+"""
 
 #━━━━━━━━━━━━〔━>> WELCOME & BOX & PROMPT <<━〕━━━━━━━━━━━━#
 
@@ -405,13 +400,23 @@ class RANDOM:
         print()
 
     def linex(self):
-        print(f"{W}------------------------------------------------")
+    width = get_terminal_width()
+    line_width = min(width - 4, 50)
+    print(f"{GOLD_LINE}{BOLD}{'░' * line_width}{RESET}")
 
-    def main(self):
-        self.clear()
-        print(f"{W} [1] File Cloning\n [2] Number Cloning\n [3] Contact Admin (fb) \n [0] {R}Exit")
-        self.linex()
-        x = input(f" {X} Choice > ")
+def main(self):
+    self.clear()
+    width = get_terminal_width()
+    box_width = min(width - 4, 50)
+    
+    print(f"{GOLD_LINE}{BOLD}{'◇' * box_width}{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 1 → File Cloning{' ' * (box_width - 22)}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 2 → Number Cloning{' ' * (box_width - 24)}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 3 → Contact Admin (fb){' ' * (box_width - 27)}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}◆{RESET} 0 → Exit{' ' * (box_width - 15)}{GOLD_LINE}{BOLD}◆{RESET}")
+    print(f"{GOLD_LINE}{BOLD}{'◇' * box_width}{RESET}")
+    self.linex()
+    x = input(f" {X} Choice > ")
         if x == "1":
             self.file()
         elif x == "2":
