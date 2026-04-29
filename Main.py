@@ -688,47 +688,47 @@ class RANDOM:
         
         # د هیواد انتخاب - منظم بکس
         print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
-        print(f"{GOLD_LINE}{BOLD}◆{RESET} 1 → Random Afghanistan{' ' * 31}{GOLD_LINE}{BOLD}◆{RESET}")
-        print(f"{GOLD_LINE}{BOLD}◆{RESET} 2 → Random Malaysia{' ' * 34}{GOLD_LINE}{BOLD}◆{RESET}")
-        print(f"{GOLD_LINE}{BOLD}◆{RESET} 3 → Random India{' ' * 37}{GOLD_LINE}{BOLD}◆{RESET}")
-        print(f"{GOLD_LINE}{BOLD}◆{RESET} 4 → Random Nepal{' ' * 37}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}1 → Random Afghanistan{ ' ' * 23}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}2 → Random Malaysia{ ' ' * 26}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}3 → Random India{ ' ' * 29}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}4 → Random Nepal{ ' ' * 29}{GOLD_LINE}{BOLD}◆{RESET}")
         print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
         
-        country = input(f" {X} Select > ")
+        country = input(f" {GOLD_LINE}{X}{RESET} Select > ")
         self.clear()
         
         # د هیواد پر بنسټ مثال
         if country == "1":
-            ex_info = "Ex > 9378, 9371, 9377*"
+            ex_info = f"{GOLD_LINE}Ex > 9378, 9371, 9377*{RESET}"
             country_name = "Afghanistan"
         elif country == "2":
-            ex_info = "Ex > 0118, 012*, 011*"
+            ex_info = f"{GOLD_LINE}Ex > 0118, 012*, 011*{RESET}"
             country_name = "Malaysia"
         elif country == "3":
-            ex_info = "Ex > 9848, 98**, 63**"
+            ex_info = f"{GOLD_LINE}Ex > 9848, 98**, 63**{RESET}"
             country_name = "India"
         elif country == "4":
-            ex_info = "Ex > 9814, 99**, 98**"
+            ex_info = f"{GOLD_LINE}Ex > 9814, 99**, 98**{RESET}"
             country_name = "Nepal"
         else:
-            print(f" {X} Select Correct Country :)")
+            print(f" {GOLD_LINE}{X}{RESET} Select Correct Country :)")
             time.sleep(2)
             self.rnd()
             return
         
         # د کوډ لپاره بکس - منظم
         print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
-        print(f"{GOLD_LINE}{BOLD}◆{RESET} {ex_info}{' ' * (45 - len(ex_info))}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} {ex_info}{' ' * (45 - len(ex_info.replace(GOLD_LINE, '').replace(RESET, '')))}{GOLD_LINE}{BOLD}◆{RESET}")
         print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
-        code = input(f" {X} Put Code > ")
+        code = input(f" {GOLD_LINE}{X}{RESET} Put Code > ")
         
         # د حد لپاره بکس - منظم
         print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
-        print(f"{GOLD_LINE}{BOLD}◆{RESET} Ex > 1000, 9999{' ' * 36}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}Ex > 1000, 9999{ ' ' * 28}{GOLD_LINE}{BOLD}◆{RESET}")
         print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
         
         try:
-            limit = int(input(f" {X} Put Limit > "))
+            limit = int(input(f" {GOLD_LINE}{X}{RESET} Put Limit > "))
         except:
             limit = 99999
         
@@ -738,10 +738,10 @@ class RANDOM:
         
         # د پاسورډ ډول لپاره بکس - منظم
         print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
-        print(f"{GOLD_LINE}{BOLD}◆{RESET} 1 → Auto Password{' ' * 36}{GOLD_LINE}{BOLD}◆{RESET}")
-        print(f"{GOLD_LINE}{BOLD}◆{RESET} 2 → Manual Password{' ' * 35}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}1 → Auto Password{ ' ' * 28}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}2 → Manual Password{ ' ' * 27}{GOLD_LINE}{BOLD}◆{RESET}")
         print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
-        pstype = input(f" {X} Select > ")
+        pstype = input(f" {GOLD_LINE}{X}{RESET} Select > ")
         
         if pstype == "1":
             if country == "1":
@@ -758,31 +758,31 @@ class RANDOM:
                     self.plist.append(pasx)
         else:
             try:
-                pslimit = int(input(f" {X} Password Limit? > "))
+                pslimit = int(input(f" {GOLD_LINE}{X}{RESET} Password Limit? > "))
             except:
                 pslimit = 8
-            print(f" {X} Ex > first6, last6, first7, etc...")
+            print(f" {GOLD_LINE}{X}{RESET} Ex > first6, last6, first7, etc...")
             for x in range(pslimit):
-                pwx = input(f" {X} Password [{x+1}] > ")
+                pwx = input(f" {GOLD_LINE}{X}{RESET} Password [{x+1}] > ")
                 self.plist.append(pwx)
         
         # د میتود لپاره بکس - منظم
         self.clear()
         print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
-        print(f"{GOLD_LINE}{BOLD}◆{RESET} 1 → Method [c_user]{' ' * 33}{GOLD_LINE}{BOLD}◆{RESET}")
-        print(f"{GOLD_LINE}{BOLD}◆{RESET} 2 → Method [c_user]{' ' * 33}{GOLD_LINE}{BOLD}◆{RESET}")
-        print(f"{GOLD_LINE}{BOLD}◆{RESET} 3 → Method [c_user]{' ' * 33}{GOLD_LINE}{BOLD}◆{RESET}")
-        print(f"{GOLD_LINE}{BOLD}◆{RESET} 4 → Method [datr]{' ' * 35}{GOLD_LINE}{BOLD}◆{RESET}")
-        print(f"{GOLD_LINE}{BOLD}◆{RESET} 5 → Method [c_user]{' ' * 33}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}1 → Method [c_user]{ ' ' * 25}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}2 → Method [c_user]{ ' ' * 25}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}3 → Method [c_user]{ ' ' * 25}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}4 → Method [datr]{ ' ' * 27}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}5 → Method [c_user]{ ' ' * 25}{GOLD_LINE}{BOLD}◆{RESET}")
         print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
-        mtd = input(f" {X} Select > ")
+        mtd = input(f" {GOLD_LINE}{X}{RESET} Select > ")
         
         # د سرعت لپاره بکس - منظم
         print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
-        print(f"{GOLD_LINE}{BOLD}◆{RESET} 1 → Speed [Normal]{' ' * 35}{GOLD_LINE}{BOLD}◆{RESET}")
-        print(f"{GOLD_LINE}{BOLD}◆{RESET} 2 → Speed [High]{' ' * 37}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}1 → Speed [Normal]{ ' ' * 27}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}2 → Speed [High]{ ' ' * 29}{GOLD_LINE}{BOLD}◆{RESET}")
         print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
-        spd = input(f" {X} Select > ")
+        spd = input(f" {GOLD_LINE}{X}{RESET} Select > ")
         
         if spd == "1":
             speed = 30
@@ -791,9 +791,9 @@ class RANDOM:
         
         # د کوکی لپاره بکس - منظم
         print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
-        print(f"{GOLD_LINE}{BOLD}◆{RESET} Show Cookie? (Y/N){' ' * 37}{GOLD_LINE}{BOLD}◆{RESET}")
+        print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}Show Cookie? (Y/N){ ' ' * 29}{GOLD_LINE}{BOLD}◆{RESET}")
         print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
-        cki = input(f" {X} Select (Y|N) > ")
+        cki = input(f" {GOLD_LINE}{X}{RESET} Select (Y|N) > ")
         
         if cki in ["n", "N", "no", "NO"]:
             self.cok.append("no")
@@ -804,9 +804,9 @@ class RANDOM:
         with ThreadPoolExecutor(max_workers=speed) as executor:
             self.clear()
             print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
-            print(f"{GOLD_LINE}{BOLD}◆{RESET} Operator > {code}{' ' * (41 - len(str(code)))}{GOLD_LINE}{BOLD}◆{RESET}")
-            print(f"{GOLD_LINE}{BOLD}◆{RESET} Total Account > {G}{limit}{RESET}{' ' * (38 - len(str(limit)))}{GOLD_LINE}{BOLD}◆{RESET}")
-            print(f"{GOLD_LINE}{BOLD}◆{RESET} Use Airplane (Flight) Mode For Speed Up{' ' * 8}{GOLD_LINE}{BOLD}◆{RESET}")
+            print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}Operator > {code}{' ' * (33 - len(str(code)))}{GOLD_LINE}{BOLD}◆{RESET}")
+            print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}Total Account > {G}{limit}{RESET}{' ' * (30 - len(str(limit)))}{GOLD_LINE}{BOLD}◆{RESET}")
+            print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}Use Airplane (Flight) Mode For Speed Up{ ' ' * 0}{GOLD_LINE}{BOLD}◆{RESET}")
             print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
             self.linex()
             
