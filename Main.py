@@ -28,29 +28,29 @@ X = f"{W}[/]"
 def fake_loading():
     os.system('clear')
     
-    # د ترمینل اندازه ترلاسه کول
     try:
         term_width = os.get_terminal_size().columns
     except:
         term_width = 80
     
     # د شالید رنګونه
-    BG_RED = "\033[48;2;255;0;0m"      # سور شالید
-    BG_BLUE = "\033[48;2;0;0;255m"     # نیلي شالید
-    BG_GREEN = "\033[48;2;0;255;0m"    # شین شالید
-    BG_PURPLE = "\033[48;2;128;0;128m" # بنفش شالید
-    BG_ORANGE = "\033[48;2;255;165;0m" # نارنجي شالید
-    BG_CYAN = "\033[48;2;0;255;255m"   # آسماني شالید
-    BG_MAGENTA = "\033[48;2;255;0;255m" # ګلابي شالید
+    BG_RED = "\033[48;2;255;0;0m"
+    BG_BLUE = "\033[48;2;0;0;255m"
+    BG_GREEN = "\033[48;2;0;255;0m"
+    BG_PURPLE = "\033[48;2;128;0;128m"
+    BG_ORANGE = "\033[48;2;255;165;0m"
+    BG_CYAN = "\033[48;2;0;255;255m"
+    BG_MAGENTA = "\033[48;2;255;0;255m"
     RESET_BG = "\033[0m"
+    BOLD = "\033[1m"
     
-    # سرلیک بکس - سور شالید
+    # سرلیک - سور شالید
     print(f"{BG_RED}{BOLD}{' ' * (term_width)}{RESET_BG}")
     print(f"{BG_RED}{BOLD}{' ' * ((term_width - 48) // 2)}FAROOQ TOOLS PACKAGE INSTALLER v2.7{' ' * ((term_width - 48) // 2)}{RESET_BG}")
     print(f"{BG_RED}{BOLD}{' ' * (term_width)}{RESET_BG}")
     print()
     
-    # د انسټال کیدونکو پیکیجونو لیست
+    # پیکیجونه
     packages = [
         {"name": "faroooq-core", "size_mb": 28.4, "files": 124, "bg": BG_BLUE},
         {"name": "faroooq-encryption", "size_mb": 18.7, "files": 87, "bg": BG_PURPLE},
@@ -61,13 +61,11 @@ def fake_loading():
         {"name": "faroooq-tools", "size_mb": 32.6, "files": 203, "bg": BG_BLUE}
     ]
     
-    # د هر پیکیج لپاره پروګریس
     for i, pkg in enumerate(packages, 1):
         pkg_size = pkg["size_mb"]
         pkg_files = pkg["files"]
         bg = pkg["bg"]
         
-        # د پیکیج نوم او معلومات - د شالید سره
         print(f"{bg}{BOLD}{' ' * (term_width)}{RESET_BG}")
         print(f"{bg}{BOLD}[{i}/{len(packages)}] Processing package: {pkg['name']}{' ' * (term_width - 35 - len(pkg['name']))}{RESET_BG}")
         print(f"{bg}{BOLD}    ├── Size: {pkg_size} MB{' ' * (term_width - 22)}{RESET_BG}")
@@ -76,7 +74,6 @@ def fake_loading():
         print(f"{bg}{BOLD}{' ' * (term_width)}{RESET_BG}")
         print()
         
-        # د فایلونو انسټال کول
         bar_length = 50
         for file_num in range(1, pkg_files + 1):
             percent = int((file_num / pkg_files) * 100)
@@ -106,7 +103,7 @@ def fake_loading():
         print()
         time.sleep(0.4)
     
-    # ټولټال پروګریس - د نارنجي شالید سره
+    # Finalizing - نارنجي شالید
     print(f"{BG_ORANGE}{BOLD}{' ' * (term_width)}{RESET_BG}")
     print(f"{BG_ORANGE}{BOLD}{' ' * ((term_width - 38) // 2)}FINALIZING INSTALLATION{' ' * ((term_width - 38) // 2)}{RESET_BG}")
     print(f"{BG_ORANGE}{BOLD}{' ' * (term_width)}{RESET_BG}")
