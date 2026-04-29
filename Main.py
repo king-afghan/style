@@ -23,8 +23,7 @@ B = '\x1b[38;5;45m'
 Y = "\x1b[38;5;208m"
 X = f"{W}[/]"
 
-
-    #━━━━━━━━━━━━〔━>> REALISTIC FAKE LOADING WITH BACKGROUND <<━〕━━━━━━━━━━━━#
+#━━━━━━━━━━━━〔━>> REALISTIC FAKE LOADING WITH BACKGROUND <<━〕━━━━━━━━━━━━#
 def fake_loading():
     os.system('clear')
     
@@ -33,7 +32,7 @@ def fake_loading():
     except:
         term_width = 80
     
-    # د شالید رنګونه
+    # د شالید رنګونه (د lolcat اغیز لپاره)
     BG_RED = "\033[48;2;255;0;0m"
     BG_BLUE = "\033[48;2;0;0;255m"
     BG_GREEN = "\033[48;2;0;255;0m"
@@ -43,11 +42,12 @@ def fake_loading():
     BG_MAGENTA = "\033[48;2;255;0;255m"
     RESET_BG = "\033[0m"
     BOLD = "\033[1m"
+    WHITE_TEXT = "\033[97m"  # سپین متن
     
-    # سرلیک - سور شالید
-    print(f"{BG_RED}{BOLD}{' ' * (term_width)}{RESET_BG}")
-    print(f"{BG_RED}{BOLD}{' ' * ((term_width - 48) // 2)}FAROOQ TOOLS PACKAGE INSTALLER v2.7{' ' * ((term_width - 48) // 2)}{RESET_BG}")
-    print(f"{BG_RED}{BOLD}{' ' * (term_width)}{RESET_BG}")
+    # سرلیک - سور شالید، سپین متن
+    print(f"{BG_RED}{BOLD}{WHITE_TEXT}{' ' * (term_width)}{RESET_BG}")
+    print(f"{BG_RED}{BOLD}{WHITE_TEXT}{' ' * ((term_width - 48) // 2)}FAROOQ TOOLS PACKAGE INSTALLER v2.7{' ' * ((term_width - 48) // 2)}{RESET_BG}")
+    print(f"{BG_RED}{BOLD}{WHITE_TEXT}{' ' * (term_width)}{RESET_BG}")
     print()
     
     # پیکیجونه
@@ -66,12 +66,12 @@ def fake_loading():
         pkg_files = pkg["files"]
         bg = pkg["bg"]
         
-        print(f"{bg}{BOLD}{' ' * (term_width)}{RESET_BG}")
-        print(f"{bg}{BOLD}[{i}/{len(packages)}] Processing package: {pkg['name']}{' ' * (term_width - 35 - len(pkg['name']))}{RESET_BG}")
-        print(f"{bg}{BOLD}    ├── Size: {pkg_size} MB{' ' * (term_width - 22)}{RESET_BG}")
-        print(f"{bg}{BOLD}    ├── Files: {pkg_files}{' ' * (term_width - 23)}{RESET_BG}")
-        print(f"{bg}{BOLD}    └── Status: Installing{' ' * (term_width - 28)}{RESET_BG}")
-        print(f"{bg}{BOLD}{' ' * (term_width)}{RESET_BG}")
+        print(f"{bg}{BOLD}{WHITE_TEXT}{' ' * (term_width)}{RESET_BG}")
+        print(f"{bg}{BOLD}{WHITE_TEXT}[{i}/{len(packages)}] Processing package: {pkg['name']}{' ' * (term_width - 35 - len(pkg['name']))}{RESET_BG}")
+        print(f"{bg}{BOLD}{WHITE_TEXT}    ├── Size: {pkg_size} MB{' ' * (term_width - 22)}{RESET_BG}")
+        print(f"{bg}{BOLD}{WHITE_TEXT}    ├── Files: {pkg_files}{' ' * (term_width - 23)}{RESET_BG}")
+        print(f"{bg}{BOLD}{WHITE_TEXT}    └── Status: Installing{' ' * (term_width - 28)}{RESET_BG}")
+        print(f"{bg}{BOLD}{WHITE_TEXT}{' ' * (term_width)}{RESET_BG}")
         print()
         
         bar_length = 50
@@ -91,7 +91,7 @@ def fake_loading():
             speed = random.uniform(2.5, 12.8)
             remaining = round((pkg_files - file_num) / speed, 1)
             
-            sys.stdout.write(f"\r   Progress: {color}[{bar}]{RESET_BG} {BOLD}{percent}%{RESET_BG} [{transferred}/{pkg_size} MB] [{file_num}/{pkg_files} files] [ETA: {remaining}s]{' ' * 10}")
+            sys.stdout.write(f"\r   {WHITE_TEXT}Progress:{RESET_BG} {color}[{bar}]{RESET_BG} {BOLD}{WHITE_TEXT}{percent}%{RESET_BG} {WHITE_TEXT}[{transferred}/{pkg_size} MB] [{file_num}/{pkg_files} files] [ETA: {remaining}s]{' ' * 10}{RESET_BG}")
             sys.stdout.flush()
             
             delay = random.uniform(0.01, 0.08)
@@ -99,14 +99,14 @@ def fake_loading():
                 delay = random.uniform(0.02, 0.05)
             time.sleep(delay)
         
-        print(f" {BG_GREEN}[✓ COMPLETE]{RESET_BG}")
+        print(f" {BG_GREEN}{WHITE_TEXT}[✓ COMPLETE]{RESET_BG}")
         print()
         time.sleep(0.4)
     
-    # Finalizing - نارنجي شالید
-    print(f"{BG_ORANGE}{BOLD}{' ' * (term_width)}{RESET_BG}")
-    print(f"{BG_ORANGE}{BOLD}{' ' * ((term_width - 38) // 2)}FINALIZING INSTALLATION{' ' * ((term_width - 38) // 2)}{RESET_BG}")
-    print(f"{BG_ORANGE}{BOLD}{' ' * (term_width)}{RESET_BG}")
+    # Finalizing - نارنجي شالید، سپین متن
+    print(f"{BG_ORANGE}{BOLD}{WHITE_TEXT}{' ' * (term_width)}{RESET_BG}")
+    print(f"{BG_ORANGE}{BOLD}{WHITE_TEXT}{' ' * ((term_width - 38) // 2)}FINALIZING INSTALLATION{' ' * ((term_width - 38) // 2)}{RESET_BG}")
+    print(f"{BG_ORANGE}{BOLD}{WHITE_TEXT}{' ' * (term_width)}{RESET_BG}")
     
     extra_steps = [
         "Configuring system links...",
@@ -118,18 +118,18 @@ def fake_loading():
     ]
     
     for step in extra_steps:
-        sys.stdout.write(f"   → {step}")
+        sys.stdout.write(f"   {WHITE_TEXT}→ {step}{RESET_BG}")
         sys.stdout.flush()
         time.sleep(random.uniform(0.5, 1.2))
-        sys.stdout.write(" [✓ DONE]\n")
+        sys.stdout.write(f" {BG_GREEN}{WHITE_TEXT}[✓ DONE]{RESET_BG}\n")
         sys.stdout.flush()
         time.sleep(0.2)
     
     print()
-    print(f"{BG_GREEN}{BOLD}{' ' * (term_width)}{RESET_BG}")
-    print(f"{BG_GREEN}{BOLD}{' ' * ((term_width - 44) // 2)}✓ INSTALLATION COMPLETED SUCCESSFULLY!{' ' * ((term_width - 44) // 2)}{RESET_BG}")
-    print(f"{BG_GREEN}{BOLD}{' ' * ((term_width - 52) // 2)}✓ FAROOQ TOOLS v2.7 IS READY TO USE!{' ' * ((term_width - 52) // 2)}{RESET_BG}")
-    print(f"{BG_GREEN}{BOLD}{' ' * (term_width)}{RESET_BG}")
+    print(f"{BG_GREEN}{BOLD}{WHITE_TEXT}{' ' * (term_width)}{RESET_BG}")
+    print(f"{BG_GREEN}{BOLD}{WHITE_TEXT}{' ' * ((term_width - 44) // 2)}✓ INSTALLATION COMPLETED SUCCESSFULLY!{' ' * ((term_width - 44) // 2)}{RESET_BG}")
+    print(f"{BG_GREEN}{BOLD}{WHITE_TEXT}{' ' * ((term_width - 52) // 2)}✓ FAROOQ TOOLS v2.7 IS READY TO USE!{' ' * ((term_width - 52) // 2)}{RESET_BG}")
+    print(f"{BG_GREEN}{BOLD}{WHITE_TEXT}{' ' * (term_width)}{RESET_BG}")
     
     time.sleep(2.5)
     os.system('clear')
@@ -509,7 +509,7 @@ class RANDOM:
         os.system("clear")
         os.system(f'echo "{logo}" | lolcat -p 1.6')
         try:
-            with open('assets/ansi-art.utf.ans.txt', 'r') as f:
+            with open('assets/farooq-tools-v2.7.ans.txt', 'r') as f:
                 ansi_logo = f.read()
             print(ansi_logo)
         except:
@@ -546,7 +546,7 @@ class RANDOM:
         elif x == "2":
             self.rnd()
         elif x == "3":
-            os.system("termux-open https://wa.me/966548104126?text=Hi%2C%20I'm%20a%20Farooq%20Tools%20user,%20Need%20info%20about%20this%20tools.%20🤍")
+            os.system('termux-open "https://wa.me/966548104126?text=Hi%2C%20I%27m%20a%20Farooq%20Tools%20user%2C%20Need%20info%20about%20this%20tools.%20🤍"')
         elif x == "0":
             sys.exit()
         else:
