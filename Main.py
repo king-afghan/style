@@ -56,6 +56,10 @@ SPECIAL_BG1_6 = "\033[48;2;155;0;81m"
 LINE_BOLD = "\033[1m"
 CYAN_ARROW = "\033[96m"
 
+# د بکس ځانګړي رنګونه
+BOX_PINK = "\033[38;2;255;0;98m"      # #ff0062 - د بکس لپاره
+TEXT_GREEN = "\033[38;2;183;240;15m"  # #b7f00f - د متن لپاره
+
 def get_terminal_width():
     try:
         return os.get_terminal_size().columns
@@ -111,7 +115,7 @@ def print_box1():
         if padding_needed < 0:
             padding_needed = 0
         print(f"{bg_color}{WHITE_TEXT}{BOLD}║{info}{' ' * padding_needed} ║{RESET}")
-    print(f"{LINE_BOLD}{DARK_GOLD}═══════════════ ──•◆•── ────────────────•✦•───────────────────────╝{RESET}")
+    print(f"{LINE_BOLD}{DARK_GOLD}═══════════════ ──•◆•── ────────────────•✦•──────────────────────────╝{RESET}")
 
 def show_prompt():
     print(f"\n\033[93m{BOLD}┌─[faroooq@termux]-[~]\033[0m")
@@ -119,7 +123,7 @@ def show_prompt():
 
 def welcome():
     width = get_terminal_width()
-    welcome_text = "⚡ WELCOME TO FAROOQ TOOL ⚡"
+    welcome_text = " WELCOME TO FAROOQ TOOLS"
     padding = (width - len(welcome_text)) // 2
     if padding < 0:
         padding = 0
@@ -391,11 +395,18 @@ class RANDOM:
     def clear(self):
         os.system("clear")
         os.system(f'echo "{logo}" | lolcat -p 1.6')
-        print()
-        print_centered_big("WELCOME TO FAROOOQ TOOLS")
-        print()
+        try:
+            with open('assets/ansi-art.utf.ans.txt', 'r') as f:
+                ansi_logo = f.read()
+            print(ansi_logo)
+        except:
+            pass
+        width = get_terminal_width()
+        box_width = min(width - 4, 40)
+        print(f"{BOX_PINK}{BOLD}{'◇' * box_width}{RESET}")
+        print(f"{BOX_PINK}{BOLD}◆◆{RESET}{TEXT_GREEN}{BOLD}{' ' * ((box_width - 26) // 2)}WELCOME TO FAROOQ TOOLS{' ' * ((box_width - 26) // 2)}{RESET}{BOX_PINK}{BOLD}◆◆{RESET}")
+        print(f"{BOX_PINK}{BOLD}{'◇' * box_width}{RESET}")
         print_box1()
-        print()
         show_prompt()
         print()
 
