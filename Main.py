@@ -820,7 +820,6 @@ class RANDOM:
         except Exception as e:
             pass
 #━━━━━━━━━━━━〔━>><> RANDOM >><<CLASS <><<━〕━━━━━━━━━━━━#
-    #━━━━━━━━━━━━〔━>><> RANDOM >><<CLASS <><<━〕━━━━━━━━━━━━#
     def rnd(self):
         self.clear()
         
@@ -937,15 +936,16 @@ class RANDOM:
             self.cok.append("no")
         else:
             self.cok.append("yes")
-#━━━━━━━━━━━━〔━>><> >><<CLASS <><<━〕━━━━━━━━━━━━#     
-with ThreadPoolExecutor(max_workers=speed) as executor:
-    self.clear()
-    print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
-    print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}Operator > {G}{code}{RESET}{' ' * (33 - len(str(code)))}{GOLD_LINE}{BOLD}◆{RESET}")
-    print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}Total Account > {G}{limit}{RESET}{' ' * (30 - len(str(limit)))}{GOLD_LINE}{BOLD}◆{RESET}")
-    print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}Use Airplane ({R}Flight{RESET}{GOLD_LINE}) Mode For Speed Up{ ' ' * 0}{GOLD_LINE}{BOLD}◆{RESET}")
-    print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
-    self.linex()
+        
+        # د کرک کولو پیل - منظم بکس
+        with ThreadPoolExecutor(max_workers=speed) as executor:
+            self.clear()
+            print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
+            print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}Operator > {G}{code}{RESET}{' ' * (33 - len(str(code)))}{GOLD_LINE}{BOLD}◆{RESET}")
+            print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}Total Account > {G}{limit}{RESET}{' ' * (30 - len(str(limit)))}{GOLD_LINE}{BOLD}◆{RESET}")
+            print(f"{GOLD_LINE}{BOLD}◆{RESET} {GOLD_LINE}Use Airplane ({R}Flight{RESET}{GOLD_LINE}) Mode For Speed Up{ ' ' * 0}{GOLD_LINE}{BOLD}◆{RESET}")
+            print(f"{GOLD_LINE}{BOLD}{'◇' * 54}{RESET}")
+            self.linex()
             
             for love in self.user:
                 ids = code + love
